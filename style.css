@@ -533,3 +533,23 @@ footer{
         width: 100%;
     }
 }
+
+.github-box {
+  max-width: 800px;
+  margin: 60px auto;   /* 👈 THIS centers the whole block */
+  text-align: center;
+}
+.btn {
+  display: inline-block;
+  background-color: black;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 6px;
+  text-decoration: none;
+  font-size: 14px;
+  transition: 0.3s;
+}
+
+.btn:hover {
+  background-color: #333;
+}

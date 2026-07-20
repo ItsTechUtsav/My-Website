@@ -14,52 +14,53 @@
     />
   </head>
   <body>
-    <header>
-      <div class="humburger">
-        <i class="fa-solid fa-bars-staggered" data-visible="true"></i>
-        <i class="fa-solid fa-xmark" data-visible="false"></i>
-      </div>
-      <nav class="container navbar">
-        <ul class="nav-links" data-visible="false">
-          <li><a href="#About">About me</a></li>
-          <li><a href="#Skills">Skills</a></li>
-          <li><a href="#project">Projects</a></li>
-          <li><a class="btn" href="#contact">Contact Me</a></li>
-        </ul>
-      </nav>
-    </header>
     <main>
       <section class="hero">
-        <div class="bg-img">
-          <img src="./images/bg.png" alt="" />
-        </div>
-        <div class="hero-top container">
-          <div class="content">
-            <div class="info">
-              <h1>Hi, I am</h1>
+        <div class="hero-left">
+          <div class="hero-content">
+            <h4>Hi, I am</h4>
 
-              <h2>Utsav Sharma</h2>
-              <h6>DevOps Engineer</h6>
-            </div>
+            <h1>Utsav Sharma</h1>
+
+            <h2>DevOps Engineer</h2>
+
+            <p>
+              Building scalable cloud infrastructure, automating deployments and
+              delivering reliable DevOps solutions.
+            </p>
+
             <div class="contact-me">
               <a
                 href="https://wa.me/917453916045?text=Hi%20I%20visited%20your%20portfolio"
                 target="_blank"
-                ><i class="fa-brands fa-whatsapp"></i
-              ></a>
+              >
+                <i class="fa-brands fa-whatsapp"></i>
+              </a>
+
               <a
                 href="https://www.linkedin.com/in/utsav-sharma-93431a2a8/"
                 target="_blank"
-                ><i class="fa-brands fa-linkedin"></i
-              ></a>
-              <a href="https://github.com/ItsTechUtsav" target="_blank"
-                ><i class="fa-brands fa-github"></i
-              ></a>
+              >
+                <i class="fa-brands fa-linkedin"></i>
+              </a>
+
+              <a href="https://github.com/ItsTechUtsav" target="_blank">
+                <i class="fa-brands fa-github"></i>
+              </a>
             </div>
           </div>
+        </div>
+
+        <div class="hero-right">
+          <nav class="hero-nav">
+            <a href="#About">About</a>
+            <a href="#Skills">Skills</a>
+            <a href="#project">Projects</a>
+            <a href="#contact">Contact</a>
+          </nav>
 
           <div class="person-img">
-            <img src="images\cicd logo.jpeg" alt="person" />
+            <img src="images/cicd logo.jpeg" alt="CI/CD Logo" />
           </div>
         </div>
       </section>
@@ -371,23 +372,5 @@
         <p>&copy; 2026 Utsav. All rights reserved.</p>
       </div>
     </footer>
-    <script>
-      let navbar = document.querySelector(".nav-links");
-      let humbergur = document.querySelector(".humburger");
-      let icons = document.querySelectorAll("i");
-
-      humbergur.addEventListener("click", function (event) {
-        let isvible = navbar.getAttribute("data-visible");
-        if (isvible == "true") {
-          navbar.setAttribute("data-visible", "false");
-          icons[0].setAttribute("data-visible", "true");
-          icons[1].setAttribute("data-visible", "false");
-        } else {
-          navbar.setAttribute("data-visible", "true");
-          icons[0].setAttribute("data-visible", "false");
-          icons[1].setAttribute("data-visible", "true");
-        }
-      });
-    </script>
   </body>
 </html>

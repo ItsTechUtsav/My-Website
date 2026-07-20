@@ -436,83 +436,287 @@ footer{
     }
 }
 
+/*==========================================
+      PROJECT SECTION — GRID + MODAL
+==========================================*/
+
 .projects{
-    margin-top: 8.875rem;
-    display: flex;
-    flex-direction: column;
-    gap: 5rem;
+    margin-top:8.875rem;
+    display:flex;
+    flex-direction:column;
+    gap:3rem;
 }
 
-.project-row{
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 4rem;
+.projects .header-info p{
+    width:70%;
+    margin:auto;
+    text-align:center;
+    line-height:1.6;
+    color:#555;
 }
 
-.project-row.reverse{
-    flex-direction: row-reverse;
+
+/*=========================
+        GRID
+==========================*/
+
+.project-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:2rem;
 }
 
-.project-img{
-    width: 50%;
-    position: relative;
+
+/*=========================
+        TILE
+==========================*/
+
+.project-tile{
+    position:relative;
+    background:#fff;
+    border:1px solid #000;
+    display:flex;
+    flex-direction:column;
+    overflow:hidden;
+    cursor:pointer;
+    transition:.3s ease;
 }
 
-.project-img img{
-    width: 100%;
-    border-radius: 10px;
+.project-tile:hover{
+    transform:translateY(-6px);
+    box-shadow:0 16px 32px rgba(0,0,0,.15);
 }
 
-.project-img a{
-    position: absolute;
-    bottom: 10px;
-    left: 10px;
-    background: black;
-    color: #fff;
-    padding: 8px 15px;
-    text-decoration: none;
-    border-radius: 5px;
-    font-size: 0.8rem;
+.tile-index{
+    position:absolute;
+    top:0;
+    left:0;
+    background:#000;
+    color:#fff;
+    font-size:.7rem;
+    letter-spacing:.1em;
+    padding:.4rem .75rem;
+    z-index:2;
 }
 
-.project-desc{
-    width: 50%;
+.project-tile img{
+    width:100%;
+    height:190px;
+    object-fit:cover;
+    transition:.4s;
 }
 
-.project-desc h6{
-    font-size: 1.5rem;
-    margin-bottom: 1rem;
+.project-tile:hover img{
+    transform:scale(1.04);
 }
 
-.project-desc p{
-    font-size: 0.9rem;
-    color: #555;
+.tile-body{
+    padding:1.2rem 1.2rem .4rem;
+    flex:1;
 }
 
-/* ✅ BUTTON (now works on ALL screens) */
-.project-desc a{
-    display: inline-block;
-    margin-top: 1rem;
-    background-color: black;
-    color: #fff;
-    padding: 10px 20px;
-    text-decoration: none;
-    border-radius: 5px;
-    font-size: 0.85rem;
-    font-weight: 500;
+.tile-body h3{
+    font-size:1.15rem;
+    margin-bottom:.9rem;
 }
 
-.project-desc a:hover{
-    background-color: #333;
-    transition: 0.3s ease;
+.mini-stack{
+    display:flex;
+    flex-wrap:wrap;
+    gap:.5rem;
 }
 
-/* ✅ PROJECT ROW */
-.project-row{
-    display: flex;
-    align-items: stretch;
-    gap: 4rem;
+.mini-stack span{
+    background:#ececec;
+    padding:.3rem .65rem;
+    border-radius:20px;
+    font-size:.7rem;
+}
+
+.tile-view{
+    margin:1rem 1.2rem 1.2rem;
+    padding:.7rem;
+    border:none;
+    background:#000;
+    color:#fff;
+    font-size:.8rem;
+    font-weight:600;
+    letter-spacing:.02em;
+    cursor:pointer;
+    transition:.3s;
+}
+
+.tile-view:hover{
+    background:#333;
+}
+
+
+/*=========================
+        MODAL
+==========================*/
+
+.project-modal{
+    position:fixed;
+    inset:0;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    padding:2rem;
+    z-index:999;
+    opacity:0;
+    pointer-events:none;
+    transition:opacity .3s ease;
+}
+
+.project-modal.open{
+    opacity:1;
+    pointer-events:auto;
+}
+
+.modal-backdrop{
+    position:absolute;
+    inset:0;
+    background:rgba(0,0,0,.78);
+}
+
+.modal-panel{
+    position:relative;
+    background:#fff;
+    width:min(920px,100%);
+    max-height:88vh;
+    overflow-y:auto;
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    transform:translateY(30px);
+    transition:.35s ease;
+}
+
+.project-modal.open .modal-panel{
+    transform:translateY(0);
+}
+
+.modal-close{
+    position:absolute;
+    top:1rem;
+    right:1rem;
+    width:36px;
+    height:36px;
+    border:none;
+    background:#000;
+    color:#fff;
+    font-size:1.3rem;
+    line-height:1;
+    cursor:pointer;
+    z-index:3;
+}
+
+.modal-close:hover{
+    background:#333;
+}
+
+.modal-media{
+    background:#000;
+    min-height:220px;
+}
+
+.modal-media img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+}
+
+.modal-content{
+    padding:2.5rem 2rem;
+    display:flex;
+    flex-direction:column;
+}
+
+.modal-index{
+    font-size:.75rem;
+    letter-spacing:.15em;
+    color:#888;
+    margin-bottom:.5rem;
+}
+
+.modal-content h2{
+    margin-bottom:1rem;
+}
+
+.modal-content p{
+    color:#555;
+    line-height:1.7;
+    margin-bottom:1.5rem;
+}
+
+.detail-stack{
+    display:flex;
+    flex-wrap:wrap;
+    gap:.6rem;
+    margin-bottom:1.5rem;
+}
+
+.detail-stack span{
+    background:#000;
+    color:#fff;
+    padding:.4rem .85rem;
+    border-radius:20px;
+    font-size:.75rem;
+}
+
+.modal-content h4{
+    margin-bottom:.6rem;
+}
+
+.modal-content ul{
+    padding-left:20px;
+    line-height:1.9;
+    margin-bottom:1.5rem;
+}
+
+.project-links{
+    display:flex;
+    gap:1rem;
+    margin-top:auto;
+}
+
+.project-links a{
+    text-decoration:none;
+    padding:.7rem 1.3rem;
+    border:2px solid #000;
+    border-radius:6px;
+    color:#000;
+    font-weight:600;
+    transition:.3s;
+}
+
+.project-links a:hover{
+    background:#000;
+    color:#fff;
+}
+
+
+/*=========================
+      RESPONSIVE
+==========================*/
+
+@media(max-width:900px){
+
+.project-grid{
+    grid-template-columns:1fr;
+}
+
+.modal-panel{
+    grid-template-columns:1fr;
+}
+
+.modal-media{
+    height:220px;
+}
+
+.projects .header-info p{
+    width:100%;
+}
+
 }
 
 .github-box {

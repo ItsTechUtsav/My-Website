@@ -223,89 +223,78 @@
         </div>
       </section>
 
+      <!-- ===================== PROJECTS ===================== -->
+
       <section class="projects container" id="project">
         <div class="header-info">
           <h4>PROJECTS</h4>
+          <p>
+            Click on any project to explore its architecture, deployment
+            pipeline and implementation details.
+          </p>
         </div>
 
-        <!-- Project 1 -->
-        <div class="project-row">
-          <div class="project-img">
-            <img src="images\img serverless file sharing.png" alt="project" />
-          </div>
-          <div class="project-desc">
-            <h6>Serverless File Sharing System</h6>
-            <p>
-              Built a secure serverless file-sharing system using AWS Lambda,
-              API Gateway, S3, and DynamoDB.<br />
-              The system supports expiring links, password protection (hashed),
-              and one-time download functionality. <br />Infrastructure was
-              managed using Terraform and deployments automated using GitHub
-              Actions CI/CD, with monitoring via CloudWatch.
-            </p>
-            <a href="https://github.com/ItsTechUtsav" target="_blank"
-              >View Code</a
-            >
-          </div>
+        <div class="project-grid">
+          <!-- Card 1 -->
+          <article class="project-tile" data-project="0">
+            <div class="tile-index">01</div>
+            <img
+              src="cicd-pipeline-project.svg"
+              alt="End-to-End DevOps CI/CD Pipeline"
+            />
+            <div class="tile-body">
+              <h3>End-to-End DevOps CI/CD Pipeline</h3>
+            </div>
+            <button class="tile-view">Explore →</button>
+          </article>
+
+          <!-- Card 2 -->
+          <article class="project-tile" data-project="1">
+            <div class="tile-index">02</div>
+            <img
+              src="images/img Zero touch infra.png"
+              alt="AWS Cost Optimization Tool"
+            />
+            <div class="tile-body">
+              <h3>AWS Cost Optimization Tool</h3>
+            </div>
+            <button class="tile-view">Explore →</button>
+          </article>
+
+          <!-- Card 3 -->
+          <article class="project-tile" data-project="2">
+            <div class="tile-index">03</div>
+            <img
+              src="images/Microservices project img.png"
+              alt="Aira.AI - Mock Interview Platform"
+            />
+            <div class="tile-body">
+              <h3>Aira.AI - Mock Interview Platform</h3>
+            </div>
+            <button class="tile-view">Explore →</button>
+          </article>
         </div>
 
-        <!-- Project 2 -->
-        <div class="project-row reverse">
-          <div class="project-img">
-            <img src="images\img Zero touch infra.png" alt="project" />
-          </div>
-          <div class="project-desc">
-            <h6>Zero-Touch Infrastructure Setup</h6>
-            <p>
-              Built a zero-touch, cloud-native deployment pipeline using
-              Terraform, Ansible, Docker, AWS ECS (Fargate), and GitHub Actions.
-              <br />
-              The system automates infrastructure provisioning, containerized
-              application deployment, and CI/CD processes, eliminating manual
-              intervention.<br />
-              It ensures scalability, high availability, and secure deployments
-              using an Application Load Balancer, IAM roles, and GitHub Secrets.
-            </p>
-            <a href="https://github.com/your-repo" target="_blank">View Code</a>
-          </div>
-        </div>
-
-        <div class="project-row">
-          <div class="project-img">
-            <img src="images\Microservices project img.png" alt="project" />
-          </div>
-          <div class="project-desc">
-            <h6>Microservices Application with DevOps Deployment</h6>
-            <p>
-              Designed and deployed a scalable microservices-based application
-              using FastAPI, separating core functionalities into user and
-              product services.<br />
-              Containerized the services with Docker and orchestrated them using
-              Kubernetes, initially on Minikube and later on AWS EKS.
-              <br />Implemented a CI/CD pipeline with GitHub Actions to automate
-              build and deployment processes, ensuring faster and reliable
-              releases.
-            </p>
-            <a
-              href="https://github.com/ItsTechUtsav/Microservices-Deployment-on-EKS"
-              target="_blank"
-              >View Code</a
-            >
+        <!-- Shared modal, filled in by JS based on which card was clicked -->
+        <div class="project-modal" id="projectModal">
+          <div class="modal-backdrop" data-close></div>
+          <div class="modal-panel">
+            <button class="modal-close" data-close>&times;</button>
+            <div class="modal-media">
+              <img id="modalImage" src="" alt="" />
+            </div>
+            <div class="modal-content">
+              <span class="modal-index" id="modalIndex"></span>
+              <h2 id="modalTitle"></h2>
+              <p id="modalDesc"></p>
+              <div class="detail-stack" id="modalStack"></div>
+              <h4>Key Features</h4>
+              <ul id="modalFeatures"></ul>
+              <div class="project-links" id="modalLinks"></div>
+            </div>
           </div>
         </div>
       </section>
-
-      <br /><br />
-      <div class="github-box">
-        <h2>More on GitHub</h2>
-        <p>
-          Want to see more real-world DevOps pipelines, cloud deployments, and
-          microservices? Explore all my work on GitHub.
-        </p>
-        <a class="btn" href="https://github.com/ItsTechUtsav" target="_blank">
-          Visit GitHub
-        </a>
-      </div>
 
       <section class="contact container" id="contact">
         <div class="header-info">
@@ -372,5 +361,130 @@
         <p>&copy; 2026 Utsav. All rights reserved.</p>
       </div>
     </footer>
+
+    <script>
+      // ---- Project data: add a new object here to add a new card ----
+      const PROJECTS = [
+        {
+          title: "End-to-End DevOps CI/CD Pipeline",
+          image: "end to end cicd workflow.png",
+          description:
+            "Automated cloud-native CI/CD pipeline built using GitHub Actions, Docker, Kubernetes, Helm, AWS ECR, NGINX Ingress, Prometheus, and Grafana for containerized application deployment & monitoring.",
+          stack: [
+            "Docker",
+            "Kubernetes",
+            "Amazon ECR",
+            "GitHub Actions",
+            "NGINX Ingress",
+            "Prometheus & Grafana",
+          ],
+          features: [
+            "Automated CI/CD pipeline",
+            "Kubernetes deployments with Helm",
+            "Amazon ECR integration",
+            "NGINX Ingress routing",
+            "Prometheus monitoring and Grafana dashboards",
+          ],
+          links: [
+            { label: "GitHub", href: "https://github.com/ItsTechUtsav/DevOpsified_Project" },],
+        },
+        {
+          title: "⚙ Zero-Touch Infrastructure",
+          image: "images/img Zero touch infra.png",
+          description:
+            "Fully automated deployment pipeline using Terraform, Docker, ECS, GitHub Actions and Ansible.",
+          stack: ["Terraform", "Docker", "Ansible", "ECS", "GitHub Actions"],
+          features: [
+            "IaC",
+            "Docker Deployment",
+            "ECS Fargate",
+            "GitHub CI/CD",
+            "ALB Integration",
+          ],
+          links: [
+            { label: "GitHub", href: "#" },
+            { label: "Demo", href: "#" },
+          ],
+        },
+        {
+          title: "☸ Microservices Deployment",
+          image: "images/Microservices project img.png",
+          description:
+            "Scalable FastAPI microservices deployed on Kubernetes with automated GitHub Actions CI/CD pipeline.",
+          stack: ["Docker", "Kubernetes", "EKS", "GitHub Actions", "FastAPI"],
+          features: [
+            "Microservices",
+            "Docker Containers",
+            "Kubernetes",
+            "GitHub Actions",
+            "AWS EKS",
+          ],
+          links: [
+            {
+              label: "GitHub",
+              href: "https://github.com/ItsTechUtsav/Microservices-Deployment-on-EKS",
+            },
+            { label: "Demo", href: "#" },
+          ],
+        },
+      ];
+
+      const modal = document.getElementById("projectModal");
+      const modalImage = document.getElementById("modalImage");
+      const modalIndex = document.getElementById("modalIndex");
+      const modalTitle = document.getElementById("modalTitle");
+      const modalDesc = document.getElementById("modalDesc");
+      const modalStack = document.getElementById("modalStack");
+      const modalFeatures = document.getElementById("modalFeatures");
+      const modalLinks = document.getElementById("modalLinks");
+
+      function openProject(index) {
+        const project = PROJECTS[index];
+        if (!project) return;
+
+        modalImage.src = project.image;
+        modalImage.alt = project.title;
+        modalIndex.textContent = `PROJECT ${String(index + 1).padStart(2, "0")} / ${String(PROJECTS.length).padStart(2, "0")}`;
+        modalTitle.textContent = project.title;
+        modalDesc.textContent = project.description;
+
+        modalStack.innerHTML = project.stack
+          .map((item) => `<span>${item}</span>`)
+          .join("");
+
+        modalFeatures.innerHTML = project.features
+          .map((item) => `<li>${item}</li>`)
+          .join("");
+
+        modalLinks.innerHTML = project.links
+          .map(
+            (link) =>
+              `<a href="${link.href}" target="_blank" rel="noopener">${link.label}</a>`,
+          )
+          .join("");
+
+        modal.classList.add("open");
+        document.body.style.overflow = "hidden";
+      }
+
+      function closeProject() {
+        modal.classList.remove("open");
+        document.body.style.overflow = "";
+      }
+
+      document.querySelectorAll(".project-tile").forEach((tile) => {
+        tile.addEventListener("click", () => {
+          openProject(Number(tile.dataset.project));
+        });
+      });
+
+      modal.querySelectorAll("[data-close]").forEach((el) => {
+        el.addEventListener("click", closeProject);
+      });
+
+      document.addEventListener("keydown", (e) => {
+        if (e.key === "Escape") closeProject();
+      });
+    </script>
   </body>
 </html>

@@ -1,0 +1,62 @@
+<svg viewBox="0 0 800 450" xmlns="http://www.w3.org/2000/svg" role="img">
+  <title>Aira.AI interview practice platform architecture</title>
+  <desc>A React and Vite frontend calls an Express API secured with JWT auth, which talks to MongoDB for users and sessions and to OpenRouter for AI-generated interview questions and evaluation, producing timed interview sessions and score reports.</desc>
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M2 1L8 5L2 9" fill="none" stroke="#e6e6e6" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+    </marker>
+  </defs>
+
+  <rect x="0" y="0" width="800" height="450" fill="#0d0d0d"/>
+
+  <text x="40" y="46" font-family="Inter, sans-serif" font-size="12" letter-spacing="2" fill="#8a8a8a">AIRA.AI — INTERVIEW PRACTICE PLATFORM</text>
+  <line x1="40" y1="60" x2="760" y2="60" stroke="#333" stroke-width="1"/>
+
+  <g font-family="Inter, sans-serif">
+
+    <circle cx="55" cy="140" r="10" fill="none" stroke="#e6e6e6" stroke-width="1"/>
+    <text x="55" y="167" text-anchor="middle" font-size="11" fill="#9a9a9a">user</text>
+
+    <line x1="65" y1="140" x2="76" y2="140" stroke="#8a8a8a" stroke-width="1" marker-end="url(#arrow)"/>
+
+    <rect x="80" y="110" width="160" height="60" rx="4" fill="none" stroke="#e6e6e6" stroke-width="1"/>
+    <text x="160" y="135" text-anchor="middle" font-size="13" fill="#f2f2f2">React + Vite</text>
+    <text x="160" y="153" text-anchor="middle" font-size="11" fill="#9a9a9a">protected routes</text>
+
+    <line x1="240" y1="140" x2="276" y2="140" stroke="#8a8a8a" stroke-width="1" marker-end="url(#arrow)"/>
+
+    <rect x="280" y="110" width="160" height="60" rx="4" fill="none" stroke="#e6e6e6" stroke-width="1"/>
+    <text x="360" y="135" text-anchor="middle" font-size="13" fill="#f2f2f2">Express API</text>
+    <text x="360" y="153" text-anchor="middle" font-size="11" fill="#9a9a9a">JWT auth middleware</text>
+
+    <line x1="360" y1="170" x2="360" y2="200" stroke="#8a8a8a" stroke-width="1"/>
+    <line x1="360" y1="200" x2="290" y2="200" stroke="#8a8a8a" stroke-width="1"/>
+    <line x1="290" y1="200" x2="290" y2="226" stroke="#8a8a8a" stroke-width="1" marker-end="url(#arrow)"/>
+
+    <rect x="80" y="230" width="420" height="140" rx="6" fill="none" stroke="#555" stroke-width="1" stroke-dasharray="4 4"/>
+    <text x="100" y="252" font-size="12" letter-spacing="1" fill="#9a9a9a">BACKEND SERVICES</text>
+
+    <rect x="100" y="270" width="170" height="66" rx="4" fill="none" stroke="#e6e6e6" stroke-width="1"/>
+    <text x="185" y="298" text-anchor="middle" font-size="13" fill="#f2f2f2">MongoDB</text>
+    <text x="185" y="316" text-anchor="middle" font-size="11" fill="#9a9a9a">users + sessions</text>
+
+    <rect x="310" y="270" width="170" height="66" rx="4" fill="none" stroke="#e6e6e6" stroke-width="1"/>
+    <text x="395" y="298" text-anchor="middle" font-size="13" fill="#f2f2f2">OpenRouter AI</text>
+    <text x="395" y="316" text-anchor="middle" font-size="10" fill="#9a9a9a">questions + evaluation</text>
+
+    <line x1="290" y1="370" x2="290" y2="400" stroke="#8a8a8a" stroke-width="1"/>
+    <line x1="290" y1="400" x2="235" y2="400" stroke="#8a8a8a" stroke-width="1"/>
+    <line x1="235" y1="400" x2="235" y2="380" stroke="#8a8a8a" stroke-width="1" marker-end="url(#arrow)"/>
+
+    <rect x="140" y="384" width="190" height="50" rx="4" fill="none" stroke="#e6e6e6" stroke-width="1"/>
+    <text x="235" y="405" text-anchor="middle" font-size="12" fill="#f2f2f2">Interview session</text>
+    <text x="235" y="421" text-anchor="middle" font-size="10" fill="#9a9a9a">timed Q&amp;A practice</text>
+
+    <line x1="330" y1="409" x2="366" y2="409" stroke="#8a8a8a" stroke-width="1" marker-end="url(#arrow)"/>
+
+    <rect x="370" y="384" width="190" height="50" rx="4" fill="none" stroke="#e6e6e6" stroke-width="1"/>
+    <text x="465" y="405" text-anchor="middle" font-size="12" fill="#f2f2f2">Report + history</text>
+    <text x="465" y="421" text-anchor="middle" font-size="10" fill="#9a9a9a">score + past sessions</text>
+
+  </g>
+</svg>
